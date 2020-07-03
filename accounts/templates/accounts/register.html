@@ -7,13 +7,25 @@
 
 	<h1>S'inscrire</h1>
 
+		{{form.errors}}
+
 	<form action = "" method = 'POST'>
 		
 		{%csrf_token%}
-		{{form.as_p}}
+		<p>Votre adresse e-mail :</p>
+		{{form.email}}
+		<p>Votre prénom :</p>
+		{{form.first_name}}
+		<p>Choisissez un mot de passe :</p>
+		{{form.password1}}
+		<p>Confirmez votre mot de passe :</p>
+		{{form.password2}}
+		<br><br>
 
 		<input type="Submit" name="Valider">
 	</form>
+
+	<p>Vous êtes déjà inscrit ? <a href="../login">Connectez-vous</a></p>
 
 </body>
 </html>
