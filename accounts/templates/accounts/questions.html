@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Questions - Beehave</title>
+</head>
+<body>
+
+	<h1>Questions de personnalité</h1>
+	<h3>Laissez-nous mieux vous connaître...</h3>
+
+	<form method = 'POST' action = "">
+		
+		{% csrf_token %}
+		{{form.as_p}}
+
+		<input type="submit" name="Valider">
+	</form>
+
+</body>
+</html>

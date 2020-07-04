@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, UserAnswersForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
+@login_required
 def settingsPage(request):
 	return render (request, 'accounts/settings.html', locals())
 
@@ -19,6 +20,17 @@ def registerPage(request):
 				return redirect('loginPage')
 
 	return render (request, 'accounts/register.html', locals())
+
+def questionsPage(request):
+	form = UserAnswersForm()
+	if request.method == 'POST':
+		form = UserAnswersForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Vos réponses ont bien été enregistrées !')
+			return redirect ('loginPage')
+	return render (request, 'accounts/questions.html', locals())
+
 
 def loginPage(request):
 	if request.method == 'POST':
@@ -36,3 +48,4 @@ def loginPage(request):
 def logoutUser(request):
 	logout(request)
 	return redirect('loginPage')
+

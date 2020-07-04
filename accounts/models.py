@@ -5,7 +5,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.utils import timezone
-
+from django.core.validators import MaxValueValidator, MinValueValidator
 from .managers import CustomUserManager
 
 
@@ -23,3 +23,13 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+class UserAnswers(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete = models.CASCADE)
+    q1 = models.PositiveIntegerField()
+    s1 = models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.user.email
+
+ 
