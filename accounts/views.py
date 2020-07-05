@@ -16,8 +16,8 @@ def registerPage(request):
 			if form.is_valid():
 				first_name = form.cleaned_data.get('first_name')
 				form.save()
-				messages.success(request, 'Bienvenue sur Beehave, ' + first_name + '! Veuillez vous connecter pour accéder à votre compte...')
-				return redirect('loginPage')
+				messages.success(request, 'Bienvenue sur Beehave, ' + first_name + ' !')
+				return redirect('questionsPage')
 
 	return render (request, 'accounts/register.html', locals())
 
@@ -27,7 +27,7 @@ def questionsPage(request):
 		form = UserAnswersForm(request.POST)
 		if form.is_valid():
 			form.save()
-			messages.success(request, 'Vos réponses ont bien été enregistrées !')
+			messages.success(request, 'Vos réponses ont bien été enregistrées, veuillez vous connecter pour accéder à votre compte...')
 			return redirect ('loginPage')
 	return render (request, 'accounts/questions.html', locals())
 

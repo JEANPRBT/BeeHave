@@ -6,10 +6,54 @@
 </head>
 <body>
 
-	<h1>Beehave - Adieu au superficiel, bienvenue à l'introspection</h1>
+	<header>
+
+		<h1>Beehave - Adieu au superficiel, bienvenue à l'introspection</h1>
+		
+
+		<nav>
+			<a class = 'connexion' href="{% url 'loginPage' %}">Se connecter</a>
+			<a class = 'inscription' href="{% url 'registerPage' %}">S'inscrire</a>
+		</nav>
+
+	</header>
+
 	<img src="{% static "pages/carameljaune.png"%}">
-	<a href="{% url 'loginPage' %}">Se connecter</a>
-	<a href="{% url 'registerPage' %}">S'inscrire</a>
+
+	<style type="text/css">
+
+		body
+		{
+			background-color: #cf7099;
+		}
+
+		header
+		{
+			display: flex;
+			justify-content: space-between;
+		}
+
+		nav
+		{
+			justify-content: right;
+			border : solid black 2px;
+			width: 200px;
+			display: flex;
+			justify-content: space-between;
+			padding: 20px;
+
+		}
+
+		img
+		{
+			width: 400px;
+		}
+
+
+
+
+		
+	</style>
 
 </body>
 </html>
