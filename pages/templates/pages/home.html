@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home - Beehave</title>
+</head>
+<body>
+
+	<h1>Beehave - Adieu au superficiel, bienvenue à l'introspection</h1>
+	<img src="{% static "pages/carameljaune.png"%}">
+	<a href="{% url 'loginPage' %}">Se connecter</a>
+	<a href="{% url 'registerPage' %}">S'inscrire</a>
+
+</body>
+</html>

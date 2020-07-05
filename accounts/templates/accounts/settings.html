@@ -6,9 +6,17 @@
 	<title>Gestion des comptes - BeeHave</title>
 </head>
 <body>
-	
+	<style type="text/css">
+		img
+		{
+			width: 800px;
+		}
+	</style>
+
+
+	<span><a href="{% url 'logoutUser' %}">Se déconnecter</a></span><br>
 	<img src="{% static "accounts/noirblanc.png" %}"  alt = "logobeehave">
-	<span><a href="{% url 'logoutUser' %}">Se déconnecter</a></span>
+	
 
 </body>
 </html>
