@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm, UserAnswersForm
+from .forms import CustomUserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -17,19 +17,10 @@ def registerPage(request):
 				first_name = form.cleaned_data.get('first_name')
 				form.save()
 				messages.success(request, 'Bienvenue sur Beehave, ' + first_name + ' !')
-				return redirect('questionsPage')
-
+				messages.success(request, 'Vos réponses ont bien été enregistrées, veuillez vous connecter pour accéder à votre compte...')
 	return render (request, 'accounts/register.html', locals())
 
-def questionsPage(request):
-	form = UserAnswersForm()
-	if request.method == 'POST':
-		form = UserAnswersForm(request.POST)
-		if form.is_valid():
-			form.save()
-			messages.success(request, 'Vos réponses ont bien été enregistrées, veuillez vous connecter pour accéder à votre compte...')
-			return redirect ('loginPage')
-	return render (request, 'accounts/questions.html', locals())
+			
 
 
 def loginPage(request):

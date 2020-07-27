@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser, UserAnswers
+from .models import CustomUser
 
 
 class CustomUserAdmin(UserAdmin):
@@ -13,7 +13,8 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ('email', 'first_name', 'is_active',)
     fieldsets = (
         ('Informations personnelles', {'fields': ('email', 'first_name', 'password', 'gender', 'wish_gender')}),
-        ('Permissions', {'fields': ('is_staff', 'is_active')}), ('Key moments', {'fields': ('last_login', 'date_joined')})
+        ('Permissions', {'fields': ('is_staff', 'is_active')}), ('Key moments', {'fields': ('last_login', 'date_joined')}),
+        ('Personnalité',  {'fields': ('q1', 's1')})
     )
     add_fieldsets = (
         (None, {
@@ -26,4 +27,3 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(UserAnswers)
