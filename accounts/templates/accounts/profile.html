@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gestion des comptes - BeeHave</title>
+</head>
+<body>
+	<style type="text/css">
+		img
+		{
+			width: 800px;
+		}
+
+		span
+		{
+			font-weight: bold;
+		}
+	</style>
+
+	{% for message in messages %}
+	{{message}}
+	{% endfor %}
+
+	<h3>Vos informations personnelles</h3>
+	<span><p>Email :</p></span>{{email}}
+	<span><p>Prénom :</p></span>{{first_name}}
+	<span><p>Sexe :</p></span>{{gender}}
+	<span><p>Sexe recherché :</p></span>{{wish_gender}}
+	
+	<br><br>
+
+	<a href="{% url 'editProfile' %}">Modifier votre profil</a>
+	<a href="{% url 'editPassword' %}">Changer votre mot de passe</a>
+	<a href="{% url 'logoutUser' %}">Se déconnecter</a>
+
+	<br>
+	
+	<img src="{% static "accounts/noirblanc.png" %}"  alt = "logobeehave">
+
+</body>
+</html>

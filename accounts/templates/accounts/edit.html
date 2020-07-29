@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modifier votre profil - Beehave</title>
+</head>
+<body>
+	<h3>Modifier votre profil</h3>
+	<form method="POST">
+		{% csrf_token %}
+		<p>Email :</p>{{form.email}}
+		<p>Prénom :</p>{{form.first_name}}
+		<p>Sexe :</p>{{form.gender}}
+		<p>Sexe recherché :</p>{{form.wish_gender}}
+		<br><br>
+		<input type="submit" name="Valider les changements">
+	</form>
+
+	<img src="{% static "accounts/noirblanc.png" %}"  alt = "logobeehave">
+
+</body>
+</html>

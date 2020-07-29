@@ -133,3 +133,5 @@ EMAIL_HOST_USER = 'jeanperbet0@gmail.com'
 EMAIL_HOST_PASSWORD = 'lazer512'
 
 EMAIL_PORT = 587
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
