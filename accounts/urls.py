@@ -16,6 +16,6 @@ path('editpassword/', views.editPassword, name = 'editPassword'),
 path('resetpassword/', PasswordResetView.as_view(template_name = 'accounts/passwordreset.html'), name = 'password_reset'),
 path('resetpassword/sent/', PasswordResetDoneView.as_view(template_name = 'accounts/passwordresetdone.html'), name = 'password_reset_done'),
 path('reset/<uidb64>/<token>/', PasswordResetConfirmView.as_view(template_name = 'accounts/passwordresetconfirm.html'), name = 'password_reset_confirm'),
-path('resetpassword/complete/', PasswordResetCompleteView.as_view(), name = 'password_reset_complete')
+path('resetpassword/complete/', PasswordResetCompleteView.as_view(template_name = 'accounts/passwordresetcomplete.html'), name = 'password_reset_complete')
 
 ]
