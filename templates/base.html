@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %} Beehave {% endblock %}</title>
+	{% block urls %}
+	{% endblock %}
+</head>
+<body>
+
+	{% block header %}
+
+	<img src=" {% static '/media/images/noirblanconly.png' %}">
+	
+	{% endblock %}
+	
+	{% block section %}
+	{% endblock %}
+
+</body>
+</html>
