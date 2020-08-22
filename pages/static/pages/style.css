@@ -1,4 +1,21 @@
-body
+video
 {
-	color: red;
+	position:absolute;
+	margin-left: -15px;
+	margin-right: -15px;
+	box-sizing: border-box;
+	width: 100%;
+
+}
+
+#hero
+{
+	box-sizing: border-box;
+	width: 100%;
+	position: fixed;
+}
+
+#texthero
+{
+	top:10em;
 }

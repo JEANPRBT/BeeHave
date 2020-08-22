@@ -11,9 +11,17 @@
 </head>
 <body>
 	{% block section %}
-		<h1>Adieu au superficiel</h1>
-		<a href="{% url 'loginPage' %}">Se connecter</a>
-		<a href="{% url 'registerPage' %}">S'inscrire</a>
+	<section>
+		<div class='jumbotron p-0 m-0' id='hero'>
+			<video autoplay="" muted="" loop="" class="min-vh-100 min-vw-100">
+				<source src="{% static 'pages/jumbotronvideo.mp4' %}" type="video/mp4">
+			</video>
+			<div  id ='texthero' class='card-img-overlay d-flex flex-column align-items-center justify-content-center text-center text-white'>
+				<h1 class='display-4'>Adieu au superficiel</h1>
+				<p class='lead'>Nous créons des couples qui durent, basés sur la personnalité, allant plus loin que les apparences.</p>
+			</div>
+		</div>
+	</section>		
 	{% endblock %}
 </body>
 </html>

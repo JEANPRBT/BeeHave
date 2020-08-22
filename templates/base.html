@@ -5,24 +5,53 @@
 	<title>{% block title %} Beehave {% endblock %}</title>
 	{% block bootstrapcss %}
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static '/media/css/style.css' %}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% endblock %}
 	
 	{% block urls %}
-	{% endblock%}
+	{% endblock %}
 </head>
 <body>
+	<div class='container-fluid'>
+		{% block header %}
+		<header>
+			<div class='row no-gutters align-items-center'>
+				<div class='col-3'>
+					<a href="{% url 'homePage' %}"><img class='img-responsive' id='abeille' src="{% static '/media/images/noirblanconly.png' %}"></a>
+				</div>
+				<div class="col-6 text-center w-80">
+					<a href="{% url 'homePage' %}"><img class ='img-responsive' id='textebeehave' src="{% static '/media/images/noirblanctexte.png' %}"></a>
+				</div>
+				<div class='col-3 text-right'>
+					{% if user.is_authenticated %}
+						<a href="{% url 'profilePage' %}" class="btn text-warning">Votre compte</a>
+					{% else %}
+						<a href="{% url 'loginPage' %}" class="btn text-warning">Se connecter</a>
+						<a href="{% url 'registerPage' %}" class="btn text-warning">S'inscrire</a>
+					{% endif %}
+				</div>
+			</div>
+		</header>
+		{% endblock %}
 
-	{% block header %}
-		<img src=" {% static '/media/images/noirblanconly.png' %}">	
-	{% endblock %}
-	
-	{% block section %}
-	{% endblock %}
+		{% block nav %}
+		{% endblock %}
+		
+		{% block section %}
+		{% endblock %}
 
-	{% block bootstrapjs %}	
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-	{% endblock %}
+		{% block footer %}
+			<p>© 2020 Beehave - Tous droits réservés</p>
+			<a href="#">Conditions générales</a>
+			<a href="#">Politique de confidentialité</a>
+			<a href="#">Utilisation des cookies</a>
+		{% endblock %}
 
+		{% block bootstrapjs %}	
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		{% endblock %}
+	</div>
 </body>
 </html>

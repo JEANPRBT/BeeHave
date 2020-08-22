@@ -1,0 +1,19 @@
+#abeille
+{
+	width: 80px;
+}
+
+#textebeehave
+{
+	width: 140px;
+}
+
+.row
+{
+	margin-left: -15px;
+	margin-right: -15px;
+	background-color: #E2E3E3;
+	padding-right : 2%;
+	flex-wrap: nowrap;
+
+}
