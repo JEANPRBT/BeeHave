@@ -1,40 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title>S'inscrire - Beehave</title>
+	<title>{% block title %}S'inscrire - Beehave{% endblock %}</title>
 </head>
 <body>
+	{% block section %}
+		<h1>S'inscrire</h1>
 
-	<h1>S'inscrire</h1>
+			{{form.errors}}
 
-		{{form.errors}}
+		<form action = "" method = 'POST'>
+			
+			{%csrf_token%}
+			<p>Votre adresse e-mail :</p>
+			{{form.email}}
+			<p>Votre prénom :</p>
+			{{form.first_name}}
+			<p>Vous êtes :</p>
+			{{form.gender}}
+			<p>Vous recherchez :</p>
+			{{form.wish_gender}}
+			<p>Choisissez un mot de passe :</p>
+			{{form.password1}}
+			<p>Confirmez votre mot de passe :</p>
+			{{form.password2}}
+			<h3>Laissez-nous maintenant mieux vous connaître...</h3>
+			<p>Q1</p>
+			{{form.q1}}
+			<p>S1</p>
+			{{form.s1}}
+			<br><br>
 
-	<form action = "" method = 'POST'>
-		
-		{%csrf_token%}
-		<p>Votre adresse e-mail :</p>
-		{{form.email}}
-		<p>Votre prénom :</p>
-		{{form.first_name}}
-		<p>Vous êtes :</p>
-		{{form.gender}}
-		<p>Vous recherchez :</p>
-		{{form.wish_gender}}
-		<p>Choisissez un mot de passe :</p>
-		{{form.password1}}
-		<p>Confirmez votre mot de passe :</p>
-		{{form.password2}}
-		<h3>Laissez-nous maintenant mieux vous connaître...</h3>
-		<p>Q1</p>
-		{{form.q1}}
-		<p>S1</p>
-		{{form.s1}}
-		<br><br>
+			<input type="Submit" name="Valider">
+		</form>
 
-		<input type="Submit" name="Valider">
-	</form>
-
-	<p>Vous êtes déjà inscrit ? <a href="../login">Connectez-vous</a></p>
-
+		<p>Vous êtes déjà inscrit ? <a href="../login">Connectez-vous</a></p>
+	 {% endblock %}
 </body>
 </html>

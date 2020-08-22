@@ -1,43 +1,33 @@
+{% extends "base.html" %}
 {% load static %}
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gestion des comptes - BeeHave</title>
+	<title>{% block title %}Gestion des comptes - BeeHave{% endblock %}</title>
 </head>
 <body>
-	<style type="text/css">
-		img
-		{
-			width: 800px;
-		}
+	{% block section %}
+		{% for message in messages %}
+		{{message}}
+		{% endfor %}
 
-		span
-		{
-			font-weight: bold;
-		}
-	</style>
+		<h3>Vos informations personnelles</h3>
+		<p>Email</p><b>{{email}}</b><br><br>
+		<p>Prénom</p><b>{{first_name}}</b><br><br>
+		<p>Sexe</p><b>{{gender}}</b><br><br>
+		<p>Sexe recherché</p><b>{{wish_gender}}</b>
+		
+		<br><br>
 
-	{% for message in messages %}
-	{{message}}
-	{% endfor %}
+		<a href="{% url 'editProfile' %}">Modifier votre profil</a><br>
+		<a href="{% url 'editPassword' %}">Changer votre mot de passe</a><br>
+		<a href="{% url 'logoutUser' %}">Se déconnecter</a><br>
+		<a href="{% url 'password_reset' %}">Réinitialiser votre mot de passe</a><br>
 
-	<h3>Vos informations personnelles</h3>
-	<span><p>Email :</p></span>{{email}}
-	<span><p>Prénom :</p></span>{{first_name}}
-	<span><p>Sexe :</p></span>{{gender}}
-	<span><p>Sexe recherché :</p></span>{{wish_gender}}
-	
-	<br><br>
-
-	<a href="{% url 'editProfile' %}">Modifier votre profil</a>
-	<a href="{% url 'editPassword' %}">Changer votre mot de passe</a>
-	<a href="{% url 'logoutUser' %}">Se déconnecter</a>
-	<a href="{% url 'password_reset' %}">Réinitialiser votre mot de passe</a>
-
-	<br>
-	
-	<img src="{% static "accounts/noirblanc.png" %}"  alt = "logobeehave">
-
+		<br>
+		
+		<img src="{% static "accounts/noirblanc.png" %}"  alt = "logobeehave">
+	{% endblock %}
 </body>
 </html>

@@ -1,28 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Se connecter - Beehave</title>
+	<title>{% block title %}Se connecter - Beehave{% endblock %}</title>
 </head>
 <body>
+	{% block section %}
+		<h1>Se connecter</h1>
 
-	<h1>Se connecter</h1>
+		{% for message in messages%}
+		{{message}}
+		{% endfor %}
 
-	{% for message in messages%}
-	{{message}}
-	{% endfor %}
+		<form action = "" method = 'POST'>
+			{% csrf_token %}
+			<p>Votre adresse e-mail :</p>
+			<input type="text" name="email">
+			<p>Votre mot de passe :</p>
+			<input type="password" name="password"><br><br>
+			<a href="{% url 'password_reset' %}">Mot de passe oublié ?</a><br><br>
+			<input type="Submit" name="Valider">
 
-	<form action = "" method = 'POST'>
-		{% csrf_token %}
-		<p>Votre adresse e-mail :</p>
-		<input type="text" name="email">
-		<p>Votre mot de passe :</p>
-		<input type="password" name="password"><br><br>
-		<a href="{% url 'password_reset' %}">Mot de passe oublié ?</a><br><br>
-		<input type="Submit" name="Valider">
+		</form>
 
-	</form>
-
-	<p>Vous n'êtes pas encore inscrit ? <a href="../register">S'inscrire</a></p>
+		<p>Vous n'êtes pas encore inscrit ? <a href="../register">S'inscrire</a></p>
+	{% endblock %}
 
 </body>
 </html>

@@ -6,12 +6,14 @@
 <head>
 	<title>{% block title %} Accueil - BeeHave {% endblock %}</title>
 	{% block urls %}
-	<link rel="stylesheet" type="text/css" href="{% static 'pages/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'pages/style.css' %}">
 	{% endblock %}
 </head>
 <body>
 	{% block section %}
-	<h1>Adieu au superficiel</h1>
+		<h1>Adieu au superficiel</h1>
+		<a href="{% url 'loginPage' %}">Se connecter</a>
+		<a href="{% url 'registerPage' %}">S'inscrire</a>
 	{% endblock %}
 </body>
 </html>
