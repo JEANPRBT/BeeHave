@@ -18,8 +18,16 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length = 40)
     gender = models.CharField(max_length=10, choices= GENDER_CHOICES, default = 'Homme')
     wish_gender = models.CharField(max_length=10, choices = GENDER_CHOICES, default = 'Femme')
-    q1 = models.PositiveIntegerField(default=0)
-    s1 = models.PositiveIntegerField(default=0)
+    q1 = models.PositiveIntegerField(default=0, validators=[
+        MaxValueValidator(10),
+        MinValueValidator(0)
+        ])
+    s1 = models.PositiveIntegerField(default=0, validators=[
+        MaxValueValidator(10),
+        MinValueValidator(0)
+        ])
+
+
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

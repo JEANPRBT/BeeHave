@@ -1,21 +1,17 @@
-video
+.carousel
 {
-	position:absolute;
-	margin-left: -15px;
-	margin-right: -15px;
-	box-sizing: border-box;
+	height: auto;
 	width: 100%;
-
 }
 
-#hero
+.carousel-inner img
 {
-	box-sizing: border-box;
 	width: 100%;
-	position: fixed;
+	height: auto;
 }
 
-#texthero
-{
-	top:10em;
+.carousel-indicators li {
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
 }
