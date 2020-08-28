@@ -1,7 +1,9 @@
 .carousel
 {
 	height: auto;
-	width: 100%;
+	width: auto;
+	margin-left: -15px;
+	margin-right: -15px;
 }
 
 .carousel-inner img
@@ -15,3 +17,4 @@
   height: 6px;
   border-radius: 100%;
 }
+
