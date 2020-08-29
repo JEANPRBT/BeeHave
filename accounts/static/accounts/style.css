@@ -1,0 +1,192 @@
+.page
+{	
+	text-align: center;
+	background-image: -webkit-linear-gradient(bottom,#FEE501, #F0AD4E);
+	margin-right: -15px;
+	margin-left: -15px;
+	display: flex;
+	justify-content: center;	
+}	
+	
+.form-outer
+{
+	width: 600px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #FFF;
+	border-radius: 8px;
+
+
+}
+
+form 
+{
+	display: flex;
+	width:100%;
+	justify-content: center 
+
+}
+
+.formpage1, .formpage2, .formpage3
+{
+	transition : margin-left 1s ease-in-out;
+}
+
+.field
+{
+	margin : 20px;
+	position : relative;
+}
+
+.label
+{
+	font-weight: 600;
+}
+
+.input
+{
+	padding-left: 10px;
+	border-radius: 5px;
+	font-weight: 600;
+}
+
+button:hover
+{
+	color: olive;
+}
+
+.progressing-bar
+{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}	
+
+.progressing-bar .step
+{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-right: 30px;
+	margin-left: 30px;
+	position : relative ;
+	text-align: center ;
+}
+
+
+#personnalite
+{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+#contact
+{
+	margin-left: 40px;
+}
+
+#valider
+{
+	margin-left: 32px;
+}
+
+.progressing-bar .step p
+{
+	font-weight: 600;
+	font-size : 18px;
+
+}
+
+.progressing-bar .step .bullet
+{
+	height: 25px;
+	width: 25px;
+	border : 2px solid #000;
+	display: inline-block;
+	border-radius: 50%;
+	position : relative;
+	transition : 0.2s ;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.progressing-bar .step .bullet.active
+{
+	border-color: #FEF287;
+	background-color: #FEF287;
+
+}
+.progressing-bar .step .bullet span
+{
+	
+	position : absolute ;
+	left : 51%;
+	top : -1px;
+	transform: translateX(-50%);
+	
+}
+
+.progressing-bar .step .bullet.active span
+{
+	display:none;
+}
+
+
+.progressing-bar .step .bullet:before,
+.progressing-bar .step .bullet:after
+{
+	position: absolute;
+	content : '';
+	bottom : 9px;
+	left: 30px;
+	height: 3px;
+	width: 80px;
+	background : #000;
+}
+
+.progressing-bar .step .bullet.active:after
+{
+	transform: scaleX(0);
+	transform-origin: left;
+	animation: animate 0.3s linear forwards;
+	background : #FEF287;
+}
+
+@keyframes animate
+{
+	100%
+	{
+		transform : scaleX(1);
+	}
+}
+
+.progressing-bar .step:last-child .bullet:before,
+.progressing-bar .step:last-child .bullet:after
+{
+	display: none;
+}
+
+.progressing-bar .step p.active
+{
+	color :#FEF287 ;
+	transition : 0.2s linear ;
+}
+
+.progressing-bar .step .check
+{
+	position: absolute;
+	left : 50%;
+	top: 75%;
+	font-size: 15px;
+	transform : translate(-50%, -50%);
+	display : none;
+
+}
+
+.progressing-bar .step .check.active
+{
+	display: block;
+	color : #fff
+}

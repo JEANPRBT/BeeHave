@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'pages',
+    'formtools',
     ]
 
 MIDDLEWARE = [
@@ -126,6 +127,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+DATE_INPUT_FORMATS = '%d/%m/%Y'
+
 #email settings
 EMAIL_USE_TLS = True
 
@@ -133,7 +136,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 
 EMAIL_HOST_USER = 'jeanperbet0@gmail.com'
 
-EMAIL_HOST_PASSWORD = 'lazer512'
+EMAIL_HOST_PASSWORD = 'Lazer512'
 
 EMAIL_PORT = 587
 

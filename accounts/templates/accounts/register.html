@@ -4,39 +4,148 @@
 <html>
 <head>
 	<title>{% block title %}S'inscrire - Beehave{% endblock %}</title>
+	{% block urls %}
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+	<script src= "https://kit.fontawesome.com/a076d05399.js" type="text/javascript"></script>
+	{% endblock %}
 </head>
 <body>
 	{% block section %}
-		<h1>S'inscrire</h1>
-
+	<div class='page'>
+		
+		<div class='form-outer'>
+			<h1>S'inscrire</h1>
 			{{form.errors}}
+			<div class='progressing-bar'>
+				<div class='step'>
+					<p>Vous</p>
+					<div class='bullet' id="bullet1">
+						<span>1</span>
+					</div>
+					<div class='check fas fa-check'></div>
+				</div>
+				<div id="contact" class='step'>
+					<p>Contact</p>
+					<div class='bullet'>
+						<span>2</span>
+					</div>
+					<div class='check fas fa-check'></div>
+				</div>
+				<div id="personnalite" class='step'>
+					<p >Personnalité</p>
+					<div class='bullet'>
+						<span>3</span>
+					</div>
+					<div class='check fas fa-check'></div>
+				</div>
+			</div>
+			<form action = "" method = 'POST' class='form'>
+				
+				{%csrf_token%}
 
-		<form action = "" method = 'POST'>
-			
-			{%csrf_token%}
-			<p>Votre adresse e-mail :</p>
-			{{form.email}}
-			<p>Votre prénom :</p>
-			{{form.first_name}}
-			<p>Vous êtes :</p>
-			{{form.gender}}
-			<p>Vous recherchez :</p>
-			{{form.wish_gender}}
-			<p>Choisissez un mot de passe :</p>
-			{{form.password1}}
-			<p>Confirmez votre mot de passe :</p>
-			{{form.password2}}
-			<h3>Laissez-nous maintenant mieux vous connaître...</h3>
-			<p>Q1</p>
-			{{form.q1}}
-			<p>S1</p>
-			{{form.s1}}
-			<br><br>
+				<div class='formpage1'>
+					<h3 class='title'>Informations Personnelles</h3>				
+					<div class='field'>
+						<div class='label'>Prénom</div>
+						{{form.first_name}}
+					</div>
+					<div class='field'>
+						<div class='label'>Date de naissance<br><small>(au format année-mois-jour)</small></div>
 
-			<input type="Submit" name="Valider">
-		</form>
+						{{form.birthday}}
+					</div>
+					<div class='field'>
+						<div class='label'>Vous êtes</div>
+						{{form.gender}}
+					</div>
+					
+					<div class='field'>
+						<div class='label'>Vous souhaitez rencontrer</div>
+						{{form.wish_gender}}
+					</div>
+					<br>
+					<div class='fields-btns'>
+						<button class = 'btn next-1 next'>Suivant</button>
+					</div><br>
+				</div>
 
-		<p>Vous êtes déjà inscrit ? <a href="../login">Connectez-vous</a></p>
-	 {% endblock %}
+
+				<div class='formpage2'>
+					<h3 class='title'>Informations de contact</h3>
+					<div class='field'>
+						<div class='label'>E-mail</div>
+						{{form.email}}
+					</div>
+					<div class='field'>
+						<div class='label'>Mot de passe</div>
+						{{form.password1}}
+					</div>
+					<div class='field'>
+						<div class='label'>Confirmation du mot de passe</div>
+						{{form.password2}}
+					</div>
+					<br>
+					<div class='fields-btns'>
+						<button class = 'btn prev-1 prev'>Précédent</button>
+						<button class = 'btn next-2 next'>Suivant</button>
+					</div><br>
+				</div>
+
+				<div class='formpage3'>
+					<h3 class='title'>Personnalité</h3>
+					<div class='field'>
+						<div class='label'>J'aime sortir, rencontrer de nouvelles personnes et passer de soirée en soirée.</div>
+						{{form.q1}}
+					</div>
+					<div class='field'>
+						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						{{form.q2}}
+					</div>
+					<div class='field'>
+						<div class='label'>J'aime le sport, les sensations fortes, pratiquer toujours plus d'activités et passer du temps à m'entraîner.</div>
+						{{form.q3}}
+					</div>
+					<div class='field'>
+						<div class='label'>J'aime la culture, la musique, voyager et découvir sans cesse de nouveaux endroits.</div>
+						{{form.q4}}
+					</div>
+					<div class='field'>
+						<div class='label'>J'aime le bricolage, la création artistique, les activités manuelles, le jardinage et essaye de rendre le monde plus joli.</div>
+						{{form.q5}}
+					</div>
+					<div class='field'>
+						<div class='label'>Q6</div>
+						{{form.q6}}
+					</div>
+					<div class='field'>
+						<div class='label'>Q7</div>
+						{{form.q7}}
+					</div>
+					<div class='field'>
+						<div class='label'>Q8</div>
+						{{form.q8}}
+					</div>
+					<div class='field'>
+						<div class='label'>Q9</div>
+						{{form.q9}}
+					</div>
+					<div class='field'>
+						<div class='label'>Q10</div>
+						{{form.q10}}
+					</div>
+					<br>
+					<div class='fields-btns'>
+						<button class = ' btn prev-2 prev'>Précédent</button>
+						<input type="Submit" name="Valider" class='btn submit'>
+					</div><br>
+				</div>			
+				
+			</form>
+			<p>Vous êtes déjà inscrit ? <a href="../login">Connectez-vous</a></p>
+		</div>	
+	</div>
+	<script src="{% static 'accounts/script.js' %}"></script>
+	{% endblock %}
+
 </body>
 </html>
