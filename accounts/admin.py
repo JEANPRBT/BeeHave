@@ -15,15 +15,16 @@ class CustomUserAdmin(UserAdmin):
         ('Informations personnelles', {'fields': ('first_name', 'birthday', 'gender', 'wish_gender')}),
         ('Informations de contact', {'fields':('email', 'password')}),
         ('Permissions', {'fields': ('is_staff', 'is_active')}), ('Key moments', {'fields': ('last_login', 'date_joined')}),
-        ('Personnalité',  {'fields': ('q1','q2', 'q3', 'q4', 'q5', 'q6','q7', 'q8', 'q9', 'q10')})
+        ('Personnalité',  {'fields': ('o1', 'o2')})
     )
     add_fieldsets = (
         (None, {
-            'classes': ('wide',),
+            'classes': ('wide'),
             'fields': ('email', 'password1', 'password2', 'is_staff', 'is_active')}
         ),
     )
     search_fields = ('email',)
     ordering = ('email',)
+
 
 admin.site.register(CustomUser, CustomUserAdmin)

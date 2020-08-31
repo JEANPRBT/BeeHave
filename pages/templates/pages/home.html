@@ -14,7 +14,7 @@
 	{% block section %}
 	<div id="carouselExample" class="carousel carousel-fade slide " data-ride="carousel">		
 		<ul class="carousel-indicators">
-			<li data-target="#carouselExample" data-slide-to="0" class='active'></li>
+			<li data-target="#carouselExample" data-slide-to="0" class="active"></li>
 			<li data-target="#carouselExample" data-slide-to="1"></li>
 			<li data-target="#carouselExample" data-slide-to="2"></li>
 		</ul>
@@ -67,11 +67,15 @@
 
 		<a href="#carouselExample" class="carousel-control-prev" data-slide='prev'><span class='carousel-control-prev-icon'></span></a>
 		<a href="#carouselExample" class="carousel-control-next" data-slide='next'><span class='carousel-control-next-icon'></span></a>
-		
-
-
-
-
-		
+			
 	</div>
+	 <script>
+        $('.carousel').carousel({
+
+            pause: "null"
+
+        })
+    </script>
 	{% endblock %}
+</body>
+</html>

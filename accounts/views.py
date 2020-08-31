@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
+from .models import CustomUser
 
 # Create your views here.
 
@@ -23,6 +24,7 @@ def editProfile(request):
 		form = CustomUserChangeForm(request.POST, instance = request.user)
 		if form.is_valid : 
 			form.save()
+			messages.success(request, 'Votre compte a bien été mis à jour !')
 			return redirect('profilePage')
 	else:
 		form = CustomUserChangeForm(instance = request.user)

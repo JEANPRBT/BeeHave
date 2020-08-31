@@ -1,0 +1,71 @@
+.page
+{	
+	text-align: center;
+	background-image: -webkit-linear-gradient(bottom,#FEE501, #F0AD4E);
+	margin-right: -15px;
+	margin-left: -15px;
+	display: flex;
+	justify-content: center;	
+}	
+	
+.outer-form
+{
+	width: 600px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 50px;
+	padding-bottom: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+.field
+{
+	margin-bottom: 50px;
+}
+
+form 
+{
+	width:100%;
+	justify-content: center 
+
+}
+
+.carousel-indicators li 
+{
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #F99999;
+}
+
+.carousel-indicators .active
+{
+	background-color: #F0AD4E;
+	width: 8px;
+	height : 8px;
+}
+
+.label
+{
+	font-weight: 600;
+}
+
+h1
+{
+	margin-bottom: 30px;
+}
+.carousel-control-prev-icon {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.input
+{
+	padding-left: 10px;
+	border-radius: 5px;
+	font-weight: 600;
+}

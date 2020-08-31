@@ -12,9 +12,14 @@
 	height: auto;
 }
 
-.carousel-indicators li {
+.carousel-indicators li 
+{
   width: 6px;
   height: 6px;
   border-radius: 100%;
 }
 
+.carousel-caption
+{
+	margin-bottom: 50px;
+}

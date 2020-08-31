@@ -6,6 +6,7 @@ from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.utils import timezone
 from datetime import datetime
+from django.db.models.expressions import F
 from django.core.validators import MaxValueValidator, MinValueValidator
 from .managers import CustomUserManager
 
@@ -20,46 +21,128 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length = 40)
     gender = models.CharField(max_length=10, choices= GENDER_CHOICES, default = 'Homme')
     wish_gender = models.CharField(max_length=10, choices = GENDER_CHOICES, default = 'Femme')
-    q1 = models.IntegerField(validators=[
+    o1 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q2 = models.IntegerField(validators=[
+    o2 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q3 = models.IntegerField(validators=[
+    o3 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q4 = models.IntegerField(validators=[
+    o4 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q5 = models.IntegerField(validators=[
+    o5 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q6 = models.IntegerField(validators=[
+    o6 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q7 = models.IntegerField(validators=[
+    c1 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q8 = models.IntegerField(validators=[
+    c2 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q9 = models.IntegerField(validators=[
+    c3 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
-    q10 = models.IntegerField(validators=[
+    c4 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
         ])
+    c5 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    c6 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    e1 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    e2 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    e3 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    e4 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    e5 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    e6 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    a1 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    a2 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    a3 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    a4 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    a5 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    a6 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    n1 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    n2 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    n3 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    n4 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    n5 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+    n6 = models.IntegerField(validators=[
+        MaxValueValidator(5),
+        MinValueValidator(1)
+        ])
+
+    average_o = (F('o1') + F('o2') + F('o3') + F('o4') + F('o5') + F('o6'))/6
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -70,6 +153,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
+    
 
 
 

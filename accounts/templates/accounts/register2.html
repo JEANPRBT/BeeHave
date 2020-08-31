@@ -16,7 +16,7 @@
 			<h1>S'inscrire</h1>
 			{{form.errors}}
 			<div class='progressing-bar'>
-				<div id ='vous' class='step'>
+				<div class='step'>
 					<p>Vous</p>
 					<div class='bullet' id="bullet1">
 						<span>1</span>
@@ -30,45 +30,10 @@
 					</div>
 					<div class='check fas fa-check'></div>
 				</div>
-				<div id="pers" class='step'>
-					<p>Personnalité</p>
+				<div id="personnalite" class='step'>
+					<p >Personnalité</p>
 					<div class='bullet'>
 						<span>3</span>
-					</div>
-					<div class='check fas fa-check'></div>
-				</div>
-				<div id="pers-ouverture" class='step'>
-					<p >Ouverture</p>
-					<div class='bullet'>
-						<span>4</span>
-					</div>
-					<div class='check fas fa-check'></div>
-				</div>
-				<div id="pers-conscience" class='step'>
-					<p >Conscience</p>
-					<div class='bullet'>
-						<span>5</span>
-					</div>
-					<div class='check fas fa-check'></div>
-				</div>
-				<div id="pers-extra" class='step'>
-					<p >Extraversion</p>
-					<div class='bullet'>
-						<span>6</span>
-					</div>
-					<div class='check fas fa-check'></div>
-				</div>
-				<div id="pers-agrea" class='step'>
-					<p>Agréabilité</p>
-					<div class='bullet'>
-						<span>7</span>
-					</div>
-					<div class='check fas fa-check'></div>
-				</div>
-				<div id="pers-nevro" class='step'>
-					<p >Névrosité</p>
-					<div class='bullet'>
-						<span>8</span>
 					</div>
 					<div class='check fas fa-check'></div>
 				</div>
@@ -125,17 +90,8 @@
 				</div>
 
 				<div class='formpage3'>
-					<p id="explications">Veuillez répondre au questionnaire qui suit en inscrivant un chiffre de 1 à 5 suivant l'échelle ci-dessous. Soyez le plus franc possible même si vous n'aimez pas la réponse : il n'y a pas de mauvaise personnalité ! Ce questionnaire nous aidera à mieux vous connaître pour vous proposer les meilleures rencontres possibles. Pour plus d'informations sur le processus, consultez notre rubrique <a href="#" class='a'>Comment ça marche ?</a>.<br>
-					<img src="{% static 'accounts/likertscale.png' %}"></p>
-					<div class='fields-btns'>
-						<button class = 'btn prev-2 prev'>Précédent</button>
-						<button class = 'btn next-3 next'>Commencer</button>
-					</div><br>
-				</div>
-
-				<div class='formpage4'>
 					<h3 class='title'>Personnalité</h3>
-					<h5 class='subtitle'>Ouverture à l'expérience</h5>
+					<h5 class='subtitle'>Ouverture à l'expérience (1/5)</h5>
 					<div class='field'>
 						<div class='label'>J'aime sortir, rencontrer de nouvelles personnes et passer de soirée en soirée.</div>
 						{{form.o1}}
@@ -162,14 +118,14 @@
 					</div>
 					<br>
 					<div class='fields-btns'>
-						<button class = 'btn prev-3 prev'>Précédent</button>
-						<button class = 'btn next-4 next'>Suivant</button>
+						<button class = 'btn prev-2 prev'>Précédent</button>
+						<button class = 'btn next-3 next'>Suivant</button>
 					</div><br>
 				</div>
 
-				<div class='formpage5'>
+				<div class='formpage4'>
 					<h3 class='title'>Personnalité</h3>
-					<h5 class='subtitle'>Conscience</h5>
+					<h5 class='subtitle'>Conscienciosité (2/5)</h5>
 					<div class='field'>
 						<div class='label'>J'aime la culture, la musique, voyager et découvir sans cesse de nouveaux endroits.</div>
 						{{form.c1}}
@@ -196,14 +152,14 @@
 					</div>
 					<br>
 					<div class='fields-btns'>
-						<button class = 'btn prev-4 prev'>Précédent</button>
-						<button class = 'btn next-5 next'>Suivant</button>
+						<button class = 'btn prev-3 prev'>Précédent</button>
+						<button class = 'btn next-4 next'>Suivant</button>
 					</div><br>
 				</div>
 
-				<div class='formpage6'>
+				<div class='formpage5'>
 					<h3 class='title'>Personnalité</h3>
-					<h5 class='subtitle'>Extraversion</h5>
+					<h5 class='subtitle'>Extraversion (3/5)</h5>
 					<div class='field'>
 						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
 						{{form.e1}}
@@ -230,14 +186,14 @@
 					</div>
 					<br>
 					<div class='fields-btns'>
-						<button class = 'btn prev-5 prev'>Précédent</button>
-						<button class = 'btn next-6 next'>Suivant</button>
+						<button class = 'btn prev-4 prev'>Précédent</button>
+						<button class = 'btn next-5 next'>Suivant</button>
 					</div><br>
 				</div>
 
-				<div class='formpage7'>
+				<div class='formpage6'>
 					<h3 class='title'>Personnalité</h3>
-					<h5 class='subtitle'>Agréabilité</h5>
+					<h5 class='subtitle'>Agréabilité (4/5)</h5>
 					<div class='field'>
 						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
 						{{form.a1}}
@@ -264,14 +220,14 @@
 					</div>
 					<br>
 					<div class='fields-btns'>
-						<button class = 'btn prev-6 prev'>Précédent</button>
-						<button class = 'btn next-7 next'>Suivant</button>
+						<button class = 'btn prev-5 prev'>Précédent</button>
+						<button class = 'btn next-6 next'>Suivant</button>
 					</div><br>
 				</div>
 
-				<div class='formpage8'>
+				<div class='formpage7'>
 					<h3 class='title'>Personnalité</h3>
-					<h5 class='subtitle'>Névrosité</h5>
+					<h5 class='subtitle'>Névrosité (5/5)</h5>
 					<div class='field'>
 						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
 						{{form.n1}}
@@ -298,13 +254,13 @@
 					</div>
 					<br>
 					<div class='fields-btns'>
-						<button class = ' btn prev-7 prev'>Précédent</button>
+						<button class = ' btn prev-6 prev'>Précédent</button>
 						<input type="Submit" name="Valider" class='btn submit'>
 					</div><br>
 				</div>			
 				
 			</form>
-			<p>Vous êtes déjà inscrit ? <a class='a' href="../login">Connectez-vous</a></p>
+			<p>Vous êtes déjà inscrit ? <a id="a" href="../login">Connectez-vous</a></p>
 		</div>	
 	</div>
 	<script src="{% static 'accounts/script.js' %}"></script>

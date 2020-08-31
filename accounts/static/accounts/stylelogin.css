@@ -1,0 +1,57 @@
+.page
+{	
+	text-align: center;
+	background-image: -webkit-linear-gradient(bottom,#FEE501, #F0AD4E);
+	margin-right: -15px;
+	margin-left: -15px;
+	display: flex;
+	justify-content: center;	
+}
+
+.form-outer
+{
+	width: 600px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #FFF;
+	border-radius: 8px;
+}
+
+.field
+{
+	margin : 20px;
+	position : relative;
+}
+
+.label
+{
+	font-weight: 600;
+}
+
+.input
+{
+	padding-left: 10px;
+	border-radius: 5px;
+	font-weight: 600;
+}
+
+a
+{
+	color : #F0AD4E;
+}
+
+a:hover
+{
+	color : #F99999;
+	text-decoration: none;
+}
+
+.btn:hover
+{
+	color : #F99999;
+
+}

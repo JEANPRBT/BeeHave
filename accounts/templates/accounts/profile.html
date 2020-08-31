@@ -5,29 +5,40 @@
 <html>
 <head>
 	<title>{% block title %}Gestion des comptes - BeeHave{% endblock %}</title>
+	{% block urls %}<link rel="stylesheet" type="text/css" href="{% static 'accounts/styleprofile.css' %}">{% endblock %}
 </head>
 <body>
 	{% block section %}
-		{% for message in messages %}
-		{{message}}
-		{% endfor %}
-
-		<h3>Vos informations personnelles</h3>
-		<p>Email</p><b>{{email}}</b><br><br>
-		<p>Prénom</p><b>{{first_name}}</b><br><br>
-		<p>Sexe</p><b>{{gender}}</b><br><br>
-		<p>Sexe recherché</p><b>{{wish_gender}}</b>
-		
-		<br><br>
-
-		<a href="{% url 'editProfile' %}">Modifier votre profil</a><br>
-		<a href="{% url 'editPassword' %}">Changer votre mot de passe</a><br>
-		<a href="{% url 'logoutUser' %}">Se déconnecter</a><br>
-		<a href="{% url 'password_reset' %}">Réinitialiser votre mot de passe</a><br>
-
-		<br>
-		
-		<img src="{% static "accounts/noirblanc.png" %}"  alt = "logobeehave">
+	<div class='page'>
+		<div class='outer-info'>
+			<h1>Votre profil</h1>
+			{% for message in messages %}
+			{{message}}
+			{% endfor %}
+			<div class='info'>
+				<div class='field'>
+					<p class='label'>Email</p>
+					<div class='input'>{{email}}</div>
+				</div>
+				<div class='field'>
+					<p class='label'>Prénom</p>
+					<div class='input'>{{first_name}}</div>
+				</div>
+				<div class='field'>
+					<p class='label'>Sexe</p>
+					<div class='input'>{{gender}}</div>
+				</div>
+				<div class='field'>
+					<p class='label'>Recherche</p>
+					<div class='input'>{{wish_gender}}</div>
+				</div>
+			</div>
+			<br>
+			<a href="{% url 'editProfile' %}">Modifier votre profil</a><br>
+			<a href="{% url 'editPassword' %}">Changer votre mot de passe</a><br>
+			<a href="{% url 'logoutUser' %}">Se déconnecter</a><br>
+		</div>
+	</div>
 	{% endblock %}
 </body>
 </html>

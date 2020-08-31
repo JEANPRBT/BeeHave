@@ -5,22 +5,78 @@
 <html>
 <head>
 	<title>{% block title %}Modifier votre profil - Beehave{% endblock%}</title>
+	{% block urls %}
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/stylemodify.css' %}">
+	<script src= "https://kit.fontawesome.com/a076d05399.js" type="text/javascript"></script>
+	{% endblock %}
 </head>
 <body>
 	{% block section %}
-		<h3>Modifier votre profil</h3>
-		<form method="POST">
-			{% csrf_token %}
-			<p>Email :</p>{{form.email}}
-			<p>Prénom :</p>{{form.first_name}}
-			<p>Sexe :</p>{{form.gender}}
-			<p>Sexe recherché :</p>{{form.wish_gender}}
-			<br><br>
-			<input type="submit" name="Valider les changements">
-		</form>
+	<div class='page'>
+		<div class='outer-form'>
+			<h1>Modifier votre profil</h1>
+			{{form.errors}}
+			<form method="POST">
+				{% csrf_token %}
 
-		<img src="{% static "accounts/noirblanc.png" %}"  alt = "logobeehave">
+				<div id="carouselModify" class="carousel slide" data-ride="carousel">
+					
+					<ul class="carousel-indicators">
+						<li data-target="#carouselModify" data-slide-to="0" class='active'></li>
+						<li data-target="#carouselModify" data-slide-to="1"></li>
+						<li data-target="#carouselModify" data-slide-to="2"></li>
+						<li data-target="#carouselModify" data-slide-to="3"></li>
+					</ul>
+
+					<div class='carousel-inner'>
+						<div class='carousel-item active'>
+							<h3 class='title'>Changer votre email</h3>		
+							<div class='field'>
+								
+								{{form.email}}
+							</div>
+							<br>
+						</div>
+
+						<div class='carousel-item'>
+							<h3 class='title'>Changer votre prénom</h3>				
+							<div class='field'>
+
+								{{form.first_name}}
+							</div>
+							<br>
+						</div>
+
+						<div class='carousel-item'>
+							<h3 class='title'>Changer votre sexe</h3>				
+							<div class='field'>
+								<div class='label'>Vous êtes</div>
+								{{form.gender}}
+							</div>
+							<br>
+						</div>
+
+						<div class='carousel-item'>
+							<h3 class='title'>Changer votre recherche</h3>				
+							<div class='field'>
+								<div class='label'>Vous recherchez</div>
+								{{form.wish_gender}}
+							</div>
+							<br>
+						</div>
+					</div>
+					
+					<a href="#carouselModify" class="carousel-control-prev" data-slide='prev'><span class='carousel-control-prev-icon'></span></a>
+					<a href="#carouselModify" class="carousel-control-next" data-slide='next'><span class='carousel-control-next-icon'></span></a>
+
+				</div>
+
+				<a href="../" class='btn bg-light text-warning'>Retour</a>
+				<input type="submit" value="Valider" class='btn bg-warning text-light'>
+
+			</form>
+		</div>
+	</div>
 	{% endblock %}
-
 </body>
 </html>

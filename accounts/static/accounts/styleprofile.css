@@ -1,0 +1,60 @@
+.page
+{	
+	text-align: center;
+	background-image: -webkit-linear-gradient(bottom,#FEE501, #F0AD4E);
+	margin-right: -15px;
+	margin-left: -15px;
+	display: flex;
+	justify-content: center;	
+}	
+	
+.outer-info
+{
+	width: 700px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #FFF;
+	border-radius: 8px;
+}
+
+.field
+{
+	margin : 20px;
+	position : relative;
+	border :4px solid #F0AD4E;
+	border-radius: 10px;
+	padding: 10px;
+	align-items: center;
+}
+
+.info
+{
+	display: flex;
+}
+
+.label
+{
+	font-weight: 600;
+	font-size: 20px;
+	
+}
+
+.input
+{
+	font-weight: 600;color: #F99999
+}
+
+a
+{
+	color : #F0AD4E;
+}
+
+a:hover
+{
+	color : #F99999;
+	text-decoration: none;
+}

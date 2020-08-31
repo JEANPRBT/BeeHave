@@ -4,27 +4,34 @@
 <html>
 <head>
 	<title>{% block title %}Se connecter - Beehave{% endblock %}</title>
+	{% block urls%}<link rel="stylesheet" type="text/css" href="{% static 'accounts/stylelogin.css' %}">{% endblock %}
 </head>
 <body>
 	{% block section %}
+	<div class='page'>
+		<div class='form-outer'>
 		<h1>Se connecter</h1>
-
 		{% for message in messages%}
 		{{message}}
 		{% endfor %}
-
 		<form action = "" method = 'POST'>
 			{% csrf_token %}
-			<p>Votre adresse e-mail :</p>
-			<input type="text" name="email">
-			<p>Votre mot de passe :</p>
-			<input type="password" name="password"><br><br>
+			<div class="field">
+				<p class='label'>E-mail</p>
+				<input type="text" name="email" class="input">
+			</div>
+			<div class='field'>
+				<p class='label'>Mot de passe</p>
+				<input type="password" name="password" class="input">
+			</div>
 			<a href="{% url 'password_reset' %}">Mot de passe oublié ?</a><br><br>
-			<input type="Submit" name="Valider">
-
+			<input type="Submit" name="Valider" class='btn'>
 		</form>
-
+		<br>
 		<p>Vous n'êtes pas encore inscrit ? <a href="../register">S'inscrire</a></p>
+		
+		</div>
+	</div>
 	{% endblock %}
 
 </body>
