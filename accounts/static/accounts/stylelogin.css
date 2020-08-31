@@ -5,7 +5,8 @@
 	margin-right: -15px;
 	margin-left: -15px;
 	display: flex;
-	justify-content: center;	
+	justify-content: center;
+
 }
 
 .form-outer
@@ -30,6 +31,7 @@
 .label
 {
 	font-weight: 600;
+	position:relative;
 }
 
 .input

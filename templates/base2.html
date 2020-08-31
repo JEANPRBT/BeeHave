@@ -6,10 +6,8 @@
 	{% block bootstrapcss %}
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="{% static '/media/css/style.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static '/media/css/menu.css' %}">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" type="image/x-icon" href="{% static '/media/images/faviconjaune.png'%}" />
-
 	{% endblock %}
 	
 	{% block urls %}
@@ -21,32 +19,15 @@
 		<header>
 			<div class='row no-gutters align-items-center'>
 				<div class='col-2 col-sm-1 col-md-3'>
-					<a href="{% url 'homePage' %}"><img class='img-responsive' id='abeille' src="{% static '/media/images/noirblanconly.png' %}"></a>
+					<a href="{% url 'homePage' %}"><img class='img-responsive' id='abeille' src="{% static '/media/images/carameljauneonly.png' %}"></a>
 				</div>
 				<div class="col-3 col-sm-3 col-md-5 text-center w-80">
 					<a href="{% url 'homePage' %}"><img class ='img-responsive' id='textebeehave' src="{% static '/media/images/noirblanctexte.png' %}"></a>
 				</div>
-				<div class='col-7 col-sm-8 col-md-4 text-right'>
-					<div class="menu-wrap">
-						<input type="checkbox" class="toggler">
-						<div class="hamburger">
-							<div class='hamburger-inner'>
-								
-							</div>
-						</div>
-						<div class="menu">
-							<div class="menu-inner">
-								<div class="menu-inner-inner">
-									<ul>
-										<li><a href="#">Télécharger</a></li>
-										<li><a href="#">Comment ça marche</a></li>
-										<li><a href="#">Chats</a></li>
-										<li><a href="#">Matchs</a></li>
-									</ul>
-								</div>	
-							</div>
-						</div>
-					</div>
+				<div class='col-7 col-sm-8 col-md-4 text-right '>
+					<a href="#" class='btn bg-warning text-light '>Télécharger</a>
+					<a href="#" class='btn bg-light text-warning'>Comment ça marche</a>
+
 				</div>
 			</div>
 		</header>
