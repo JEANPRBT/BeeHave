@@ -2,7 +2,6 @@
 {
 	--primary-color : #F0AD4E;
 	--overlay-color : #FEE501;
-	--menu-speed : 0.75s;
 }
 
 /* MENU STYLES */
@@ -47,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s ease;
+  transition: all 0.6s ease;
 }
 
 /* Hamburger Lines - Top & Bottom */
@@ -91,12 +90,12 @@
 
 .menu-wrap .toggler:checked ~ .menu > div {
   transform: scale(1);
-  transition-duration: var(--menu-speed);
+  transition-duration: 0.8s;
 }
 
 .menu-wrap .toggler:checked ~ .menu > div > div {
   opacity: 1;
-  transition:  opacity 0.4s ease 0.4s;
+  transition:  opacity 0.8s ease 0.4s;
 }
 
 .menu-wrap .menu {

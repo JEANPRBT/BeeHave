@@ -140,9 +140,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     n6 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
-        ])
-
-    average_o = (F('o1') + F('o2') + F('o3') + F('o4') + F('o5') + F('o6'))/6
+        ]) 
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -153,8 +151,24 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-    
+    def average_O(self):
+        o =(self.o1 + self.o2 + self.o3 + self.o4 + self.o5 + self.o6)/6
+        return round(o, 1)
 
 
+    def average_C(self):
+        c =(self.c1 + self.c2 + self.c3 + self.c4 + self.c5 + self.c6)/6
+        return round(c, 1)
 
- 
+    def average_E(self):
+        e =(self.e1 + self.e2 + self.e3 + self.e4 + self.e5 + self.e6)/6
+        return round(e, 1)
+
+    def average_A(self):
+        a =(self.a1 + self.a2 + self.a3 + self.a4 + self.a5 + self.a6)/6
+        return round(a, 1)
+
+
+    def average_N(self):
+        n =(self.n1 + self.n2 + self.n3 + self.n4 + self.n5 + self.n6)/6
+        return round(n, 1)
