@@ -141,3 +141,5 @@ EMAIL_HOST_PASSWORD = 'Lazer512'
 EMAIL_PORT = 587
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+MAILER_EMAIL_BACKEND = EMAIL_BACKEND

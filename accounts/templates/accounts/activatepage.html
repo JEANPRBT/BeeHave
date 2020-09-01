@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Activer votre compte{% endblock %}</title>
+	{% block urls %}<link rel="stylesheet" type="text/css" href="{% static 'accounts/styleactivate.css' %}">{% endblock %}
+</head>
+<body>
+	{% block section %}
+	<div class='page'>
+		<div class='outer-form'>
+			<h1>Bienvenue sur Beehave</h1>
+			<p>Pour activer votre compte, veuillez vérifier vos emails et cliquer sur le lien reçu de notre part. Vous n'êtes plus qu'à une étape de l'amour !</p>
+		</div>
+	</div>
+	{% endblock %}
+
+</body>
+</html>

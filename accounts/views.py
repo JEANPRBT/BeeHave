@@ -3,11 +3,19 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.encoding import force_bytes
+from django.http import HttpResponse
+
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
+from .managers import CustomUserManager
 
 # Create your views here.
 
@@ -51,19 +59,40 @@ def registerPage(request):
 			form = CustomUserCreationForm(request.POST)
 			if form.is_valid():
 				first_name = form.cleaned_data.get('first_name')
-				form.save()
-				subject= 'Thanks for signing up to Beehave !'
-				message = 'Welcome to our great community at Beehave ! '
+				user = form.save()
+				user.is_active = False
+				user.save()
+				current_site = get_current_site(request)
+				subject= 'Activate your account - Thanks for signing up at Beehave !'
+				message = render_to_string('accounts/email.html',
+					{
+						'user':user,
+						'domain':current_site.domain,
+						'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+						'token': default_token_generator.make_token(user),
+					})
 				from_email = settings.EMAIL_HOST_USER
 				mail_to = [form.cleaned_data.get('email'), settings.EMAIL_HOST_USER]
 				send_mail(subject, message, from_email, mail_to, fail_silently = False)
 
-				messages.success(request, 'Bienvenue sur Beehave, ' + first_name + ' !')
-				messages.success(request, 'Vos réponses ont bien été enregistrées, veuillez vous connecter pour accéder à votre compte...')
-
-				return redirect('loginPage')
+				return redirect('activatePage')
 	return render (request, 'accounts/register.html', locals())
 
+def activateUser(request, uidb64, token):
+	try:
+		uid = urlsafe_base64_decode(uidb64).decode()
+		user = CustomUser._default_manager.get(pk=uid)
+	except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+		user = None
+	if user is not None and default_token_generator.check_token(user, token):
+		user.is_active=True
+		user.save()
+		first_name = user.first_name
+		messages.success(request, 'Bienvenue sur BeeHave,' + ' ' + first_name + ' !') 
+		messages.success(request, 'Veuillez maintenant vous connecter pour accéder à votre compte.')
+		return redirect('loginPage')
+	else : 
+		return HttpResponse("Votre lien d'activation est invalide !")
 
 def loginPage(request):
 	if request.method == 'POST':
