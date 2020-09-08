@@ -1,7 +1,12 @@
+body
+{
+	overflow-x: hidden;
+}
+
+
 .page
 {	
 	text-align: center;
-	background-image: -webkit-linear-gradient(bottom,#FEE501, #F0AD4E);
 	margin-right: -15px;
 	margin-left: -15px;
 	display: flex;
@@ -10,13 +15,13 @@
 	
 .form-outer
 {
-	width: 1100px;
+	width: 1000px;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	padding: 70px;
-	background-color: #FFF;
+	background-color: rgba(0, 0, 0, 0.1);
 	border-radius: 8px;
-
+	color : #fff;
 
 }
 
@@ -26,6 +31,27 @@ form
 	width:100%;
 	justify-content: center 
 
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100;
+  height: 100%;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+  video {
+    height: 200%;
+    top: -20%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  video {
+    width: 300%;
+    left: -100%;
+  }
 }
 
 .formpage1, .formpage2, .formpage3, .formpage4, .formpage5, .formpage6, .formpage7
@@ -47,11 +73,13 @@ form
 input
 {
 	padding-left: 10px;
-	border-radius: 5px;
+	border-radius: 15px;
 	font-weight: 600;
+	border : 3px solid #F0AD4E;
 }
 
-.input
+.wish_gender,
+.gender
 {
 	padding-left: 10px;
 	border-radius: 5px;
@@ -147,8 +175,8 @@ button:hover
 
 .progressing-bar .step .bullet.active
 {
-	border-color: #FEF287;
-	background-color: #FEF287;
+	border-color: #F0AD4E;
+	background-color: #F0AD4E;
 
 }
 .progressing-bar .step .bullet span
@@ -184,7 +212,7 @@ button:hover
 	transform: scaleX(0);
 	transform-origin: left;
 	animation: animate 0.5s linear forwards;
-	background : #FEF287;
+	background : #F0AD4E;
 }
 
 @keyframes animate
@@ -203,7 +231,7 @@ button:hover
 
 .progressing-bar .step p.active
 {
-	color :#FEF287 ;
+	color :#F0AD4E ;
 	transition : 0.2s linear ;
 }
 
@@ -211,7 +239,7 @@ button:hover
 {
 	position: absolute;
 	left : 50%;
-	top: 80%;
+	top: 75%;
 	font-size: 15px;
 	transform : translate(-50%, -50%);
 	display : none;

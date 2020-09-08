@@ -10,16 +10,15 @@ from beehave import settings
 
 class CustomUserCreationForm(UserCreationForm):
 
-
     class Meta(UserCreationForm):
         model = CustomUser
-        fields = ('email', 'first_name','birthday', 'gender', 'wish_gender', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6','c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'n1', 'n2', 'n3', 'n4', 'n5', 'n6')
+        fields = ('email','first_name','birthday', 'gender', 'wish_gender', 'o1', 'o2', 'o3', 'o4', 'o5', 'o6','c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'n1', 'n2', 'n3', 'n4', 'n5', 'n6')
         widgets = {
-        'gender':Select(attrs={'class': 'input'}),
-        'wish_gender':Select(attrs={'class': 'input'}),
-        'email':EmailInput(attrs={'class':'input'}),
-        'first_name':TextInput(attrs={'class': 'input'}),
-        'birthday': DateInput(format=settings.DATE_INPUT_FORMATS, attrs={'class': 'input', 'placeholder':'Année-Mois-Jour'}),
+        'gender':Select(attrs={'class': 'gender'}),
+        'wish_gender':Select(attrs={'class': 'wish_gender'}),
+        'email':EmailInput(attrs={'class':'email'}),
+        'first_name':TextInput(attrs={'class': 'first_name'}),
+        'birthday': DateInput(format=settings.DATE_INPUT_FORMATS, attrs={'class': 'birthday', 'type': 'date'}),
         'o1': NumberInput(attrs={'max':5, 'min':1}),
         'o2': NumberInput(attrs={'max':5, 'min':1}),
         'o3': NumberInput(attrs={'max':5, 'min':1}),
@@ -51,15 +50,6 @@ class CustomUserCreationForm(UserCreationForm):
         'n5': NumberInput(attrs={'max':5, 'min':1}),
         'n6': NumberInput(attrs={'max':5, 'min':1}),
         }
-
-        def clean_birthday(self, *args, **kwargs):
-            birthday = self.cleaned_data.get('birthday')
-            birthdelta = (datetime.date.today()  - birthday)//datetime.timedelta(days=365.25)
-            if birthdelta < 18 :
-                raise forms.ValidationError("Vous devez être majeur pour continuer !")
-            return birthday
-
-
 
 class CustomUserChangeForm(UserChangeForm):
 

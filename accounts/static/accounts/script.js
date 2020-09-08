@@ -32,7 +32,6 @@ const submitBtn = document.querySelector(".submit");
 const progressText = document.querySelectorAll('.step p');
 const progressCheck = document.querySelectorAll('.step .check');
 const bullet = document.querySelectorAll('.step .bullet');
-let max = 4;
 let current = 1
 
 document.addEventListener('DOMContentLoaded', function(){

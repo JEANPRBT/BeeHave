@@ -135,7 +135,8 @@
 
 .menu-wrap .menu > div > div > ul > li {
   list-style: none;
-  color: #F0AD4E;
+  color: #000;
+  font-weight: 600;
   font-size: 1.5rem;
   padding: 1rem;
 }
@@ -148,5 +149,5 @@
 
 .menu-wrap .menu > div > div > ul > li > a:hover
 {
-	color : black;
+	color : #f99999;
 }

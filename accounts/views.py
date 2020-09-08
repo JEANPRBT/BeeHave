@@ -89,7 +89,7 @@ def activateUser(request, uidb64, token):
 		user.save()
 		first_name = user.first_name
 		messages.success(request, 'Bienvenue sur BeeHave,' + ' ' + first_name + ' !') 
-		messages.success(request, 'Veuillez maintenant vous connecter pour accéder à votre compte.')
+		messages.success(request, 'Votre compte a été activé, veuillez maintenant vous connecter pour accéder à votre compte.')
 		return redirect('loginPage')
 	else : 
 		return HttpResponse("Votre lien d'activation est invalide !")

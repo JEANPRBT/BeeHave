@@ -12,6 +12,7 @@
 <body>
 	{% block section %}
 	<div class='page'>
+		<video src="{% static 'accounts/jumbotronvideo3.mp4' %}" autoplay loop muted playsinline></video>
 		<div class='form-outer'>
 			<h1>S'inscrire</h1>
 			{{form.errors}}
@@ -125,8 +126,7 @@
 				</div>
 
 				<div class='formpage3'>
-					<p id="explications">Veuillez répondre au questionnaire qui suit en inscrivant un chiffre de 1 à 5 suivant l'échelle ci-dessous. Soyez le plus franc possible même si vous n'aimez pas la réponse : il n'y a pas de mauvaise personnalité ! Ce questionnaire nous aidera à mieux vous connaître pour vous proposer les meilleures rencontres possibles. Pour plus d'informations sur le processus, consultez notre rubrique <a href="#" class='a'>Comment ça marche ?</a>.<br>
-					<img src="{% static 'accounts/likertscale.png' %}"></p>
+					<p id="explications">Veuillez répondre au questionnaire qui suit en inscrivant un chiffre de 1 à 5, selon l'échelle suivante. <br><br><span style="color : #F99999; font-size : 13px;"> 1 (Pas du tout d'accord) / 2 (Pas spécialement d'accord) / 3 (Ni en accord ni en désaccord) / 4 (Plutôt d'accord) / 5 (Totalement d'accord) </span><br><br> Soyez le plus franc possible même si vous n'aimez pas la réponse : il n'y a pas de mauvaise personnalité ! Ce questionnaire nous aidera à mieux vous connaître pour vous proposer les meilleures rencontres possibles. Pour plus d'informations sur le processus, consultez notre rubrique <a href="#" class='a'>Comment ça marche ?</a>.<br>
 					<div class='fields-btns'>
 						<button class = 'btn prev-2 prev'>Précédent</button>
 						<button class = 'btn next-3 next'>Commencer</button>
@@ -205,11 +205,11 @@
 					<h3 class='title'>Personnalité</h3>
 					<h5 class='subtitle'>Extraversion</h5>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime la culture, la musique, voyager et découvir sans cesse de nouveaux endroits.</div>
 						{{form.e1}}
 					</div>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime le sport, les sensations fortes, pratiquer toujours plus d'activités et passer du temps à m'entraîner.</div>
 						{{form.e2}}
 					</div>
 					<div class='field'>
@@ -217,7 +217,7 @@
 						{{form.e3}}
 					</div>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime sortir, rencontrer de nouvelles personnes et passer de soirée en soirée.</div>
 						{{form.e4}}
 					</div>
 					<div class='field'>
@@ -239,11 +239,11 @@
 					<h3 class='title'>Personnalité</h3>
 					<h5 class='subtitle'>Agréabilité</h5>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime la culture, la musique, voyager et découvir sans cesse de nouveaux endroits.</div>
 						{{form.a1}}
 					</div>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime le sport, les sensations fortes, pratiquer toujours plus d'activités et passer du temps à m'entraîner.</div>
 						{{form.a2}}
 					</div>
 					<div class='field'>
@@ -251,7 +251,7 @@
 						{{form.a3}}
 					</div>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime sortir, rencontrer de nouvelles personnes et passer de soirée en soirée.</div>
 						{{form.a4}}
 					</div>
 					<div class='field'>
@@ -273,11 +273,11 @@
 					<h3 class='title'>Personnalité</h3>
 					<h5 class='subtitle'>Névrosité</h5>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime la culture, la musique, voyager et découvir sans cesse de nouveaux endroits.</div>
 						{{form.n1}}
 					</div>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime le sport, les sensations fortes, pratiquer toujours plus d'activités et passer du temps à m'entraîner.</div>
 						{{form.n2}}
 					</div>
 					<div class='field'>
@@ -285,7 +285,7 @@
 						{{form.n3}}
 					</div>
 					<div class='field'>
-						<div class='label'>J'aime m'impliquer dans une association, aller au contact de ceux qui sont dans le besoin et passer un peu de mon temps libre à les aider.</div>
+						<div class='label'>J'aime sortir, rencontrer de nouvelles personnes et passer de soirée en soirée.</div>
 						{{form.n4}}
 					</div>
 					<div class='field'>

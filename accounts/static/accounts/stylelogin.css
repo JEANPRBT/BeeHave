@@ -1,7 +1,7 @@
 .page
 {	
 	text-align: center;
-	background-image: -webkit-linear-gradient(bottom,#FEE501, #F0AD4E);
+	
 	margin-right: -15px;
 	margin-left: -15px;
 	display: flex;
@@ -18,8 +18,9 @@
 	padding-bottom: 50px;
 	padding-left: 30px;
 	padding-right: 30px;
-	background-color: #FFF;
+	background-color: rgba(0, 0, 0, 0.1);
 	border-radius: 8px;
+	color : #fff;
 }
 
 .field
@@ -37,8 +38,9 @@
 .input
 {
 	padding-left: 10px;
-	border-radius: 5px;
+	border-radius: 15px;
 	font-weight: 600;
+	border : 3px solid #F0AD4E;
 }
 
 a
@@ -56,4 +58,25 @@ a:hover
 {
 	color : #F99999;
 
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+  video {
+    height: 110%;
+    top: -10%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  video {
+    width: 300%;
+    left: -100%;
+  }
 }

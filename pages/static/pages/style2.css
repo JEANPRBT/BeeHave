@@ -1,0 +1,47 @@
+*
+{
+	box-sizing: border-box;
+
+}
+
+.outer-container
+{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+  video {
+    height: 120%;
+    top: -6%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+.text
+{
+	position: absolute;
+	text-align: center;
+	color : #fff;
+	font-weight: 600;
+}
+
+.titre
+{
+	
+}

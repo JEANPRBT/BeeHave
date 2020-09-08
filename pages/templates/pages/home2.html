@@ -6,22 +6,26 @@
 <head>
 	<title>{% block title %} Accueil - BeeHave {% endblock %}</title>
 	{% block urls %}
-		<link rel="stylesheet" type="text/css" href="{% static 'pages/style.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'pages/style2.css' %}">
 	{% endblock %}
 </head>
 <body>
 	{% block section %}
 	<section>
-		<div class='jumbotron p-0 m-0' id='hero'>
-			<video autoplay="" muted="" loop="" >
-				<source src="{% static 'pages/jumbotronvideo.mp4' %}" type="video/mp4">
-			</video>
-			<div  id ='texthero' class='card-img d-flex flex-column align-items-center justify-content-center text-center text-white'>
-				<h1 class='display-4'>Adieu au superficiel</h1>
-				<p class='lead'>Nous créons des couples qui durent, basés sur la personnalité, allant plus loin que les apparences.</p>
+		<div class='outer-container'>
+			<div class='video-container'>
+				<video poster = "{% static 'pages/posterjumbotronvideo2.png'%}" src="{% static 'pages/jumbotronvideo2.mp4' %}" autoplay loop muted playsinline></video>
+			</div>
+			<div class='overlay'>	
+			</div>
+			<div class='text'>
+				<h1 class='titre' style="
+					font-size: 6vw;
+				">Adieu au superficiel</h1>
+				<p>Nous créons des couples qui durent, basés sur la personnalité, allant plus loin que les apparences.</p>
 			</div>
 		</div>
-	</section>		
+	</section>	
 	{% endblock %}
 
 
