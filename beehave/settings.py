@@ -125,9 +125,12 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 DATE_INPUT_FORMATS = '%d/%m/%Y'
+
 
 #email settings
 EMAIL_USE_TLS = True

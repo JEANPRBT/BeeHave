@@ -1,0 +1,55 @@
+.page
+{	
+	text-align: center;
+	margin-right: -15px;
+	margin-left: -15px;
+	display: flex;
+	justify-content: center;	
+}
+
+.outer-info
+{
+	width: 40%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color : #fff;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 8px;
+
+}
+
+a
+{
+	color : #F0AD4E;
+}
+
+a:hover
+{
+	color : #F99999;
+	text-decoration: none;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+  video {
+    height: 110%;
+    top: -10%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  video {
+    width: 300%;
+    left: -100%;
+  }
+}

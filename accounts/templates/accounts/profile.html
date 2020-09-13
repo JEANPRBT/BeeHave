@@ -10,27 +10,73 @@
 <body>
 	{% block section %}
 	<div class='page'>
+		<video src="{% static 'accounts/jumbotronvideo5.mp4' %}" autoplay loop muted playsinline></video>
+		<div class='first-info'>
+			<h1>Vos matchs</h1>
+			<div class="containero">
+				<div class="card">
+				    <h3 class="title">{{match1.first_name}}</h3>
+				    <div class="bar">
+					     <div class="emptybar"></div>
+					     <div class="filledbar"></div>
+				    </div>
+				    <div class="circle">
+					     <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+					     <circle class="stroke" cx="60" cy="60" r="50"/>
+				    </svg>
+				    </div>
+  				</div>
+				<div class="card">
+				    <h3 class="title">{{match2.first_name}}</h3>
+				    <div class="bar">
+					     <div class="emptybar"></div>
+					     <div class="filledbar"></div>
+				    </div>
+				    <div class="circle">
+					     <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+					     <circle class="stroke" cx="60" cy="60" r="50"/>
+				    </svg>
+				    </div>
+  				</div>
+				<div class="card">
+				    <h3 class="title">{{match3.first_name}}</h3>
+				    <div class="bar">
+					     <div class="emptybar"></div>
+					     <div class="filledbar"></div>
+				    </div>
+				    <div class="circle">
+					     <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+					     <circle class="stroke" cx="60" cy="60" r="50"/>
+				    </svg>
+				    </div>
+  				</div>
+			</div>
+		</div>
 		<div class='outer-info'>
 			<h1>Votre profil</h1>
 			{% for message in messages %}
 			{{message}}
 			{% endfor %}
 			<div class='info'>
-				<div class='field'>
-					<p class='label'>Email</p>
-					<div class='input'>{{email}}</div>
+				<div class='row1'>
+					<div class='field'>
+						<p class='label'>Email</p>
+						<div class='input'>{{email}}</div>
+					</div>
+					<div class='field'>
+						<p class='label'>Prénom</p>
+						<div class='input'>{{first_name}}</div>
+					</div>
 				</div>
-				<div class='field'>
-					<p class='label'>Prénom</p>
-					<div class='input'>{{first_name}}</div>
-				</div>
-				<div class='field'>
-					<p class='label'>Sexe</p>
-					<div class='input'>{{gender}}</div>
-				</div>
-				<div class='field'>
-					<p class='label'>Recherche</p>
-					<div class='input'>{{wish_gender}}</div>
+				<div class="row2">
+					<div class='field'>
+						<p class='label'>Sexe</p>
+						<div class='input'>{{gender}}</div>
+					</div>
+					<div class='field'>
+						<p class='label'>Recherche</p>
+						<div class='input'>{{wish_gender}}</div>
+					</div>
 				</div>
 			</div>
 			<br>

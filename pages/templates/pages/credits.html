@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Crédits - Beehave{% endblock %}</title>
+	{% block urls %}<link rel="stylesheet" type="text/css" href="{% static 'pages/stylecredits.css' %}">{% endblock %}
+</head>
+<body>
+	{% block section %}
+	<section>
+	<div class='page'>
+		<video src="{% static 'pages/jumbotronvideo1.mp4' %}" autoplay loop muted playsinline></video>
+		<div class="outer-info">	
+			<h3>Icônes avatars</h3>
+			<a href="https://fr.freepik.com/vecteurs/affaires">Vecteurs créés par rawpixel.com - fr.freepik.com</a>
+			<br><br>
+			<h3>Photos et vidéos</h3>
+			<a href="https://www.pexels.com/fr-fr/video/3018542">Homepage - Vidéo de Taryn Elliott provenant de Pexels</a><br>
+			<a href="https://www.pexels.com/fr-fr/video/2888383/">Login - Vidéo de Kelly Lacy provenant de Pexels</a><br>
+			<a href="https://www.pexels.com/fr-fr/video/2711145/">Crédits - Vidéo de Kelly Lacy provenant de Pexels</a><br>
+		</div>
+	</div>
+	</section>
+	{% endblock%}
+</body>
+</html>

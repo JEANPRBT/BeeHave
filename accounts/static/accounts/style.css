@@ -75,7 +75,7 @@ input
 	padding-left: 10px;
 	border-radius: 15px;
 	font-weight: 600;
-	border : 3px solid #F0AD4E;
+	border : 3px solid #FFB037;
 }
 
 .wish_gender,
@@ -175,8 +175,8 @@ button:hover
 
 .progressing-bar .step .bullet.active
 {
-	border-color: #F0AD4E;
-	background-color: #F0AD4E;
+	border-color: #FFEAA5;
+	background-color: #FFEAA5;
 
 }
 .progressing-bar .step .bullet span
@@ -212,7 +212,7 @@ button:hover
 	transform: scaleX(0);
 	transform-origin: left;
 	animation: animate 0.5s linear forwards;
-	background : #F0AD4E;
+	background : #FFEAA5;
 }
 
 @keyframes animate
@@ -231,7 +231,7 @@ button:hover
 
 .progressing-bar .step p.active
 {
-	color :#F0AD4E ;
+	color :#FFEAA5 ;
 	transition : 0.2s linear ;
 }
 
@@ -252,15 +252,32 @@ button:hover
 	color : #fff;
 }
 
+button
+{
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
 .a
 {
-	color : #F0AD4E;
+	margin-left: 10px;
+	color : #F4AD0E;
 }
 
 .a:hover
 {
+	text-decoration: none
 	color : #F99999;
-	text-decoration: none;
+
+}
+
+.btn
+{
+	color : #F4AD0E;
+}
+
+.btn:hover
+{
+	color : #F99999;
 }
 
 #explications

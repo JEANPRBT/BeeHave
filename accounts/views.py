@@ -25,6 +25,22 @@ def profilePage(request):
 	first_name = request.user.first_name
 	wish_gender = request.user.wish_gender
 	gender = request.user.gender
+	dic = {}
+	asking_user = request.user
+	if asking_user.wish_gender == 'Femme':
+		for user in CustomUser.objects.filter(gender = 'Femme').exclude(first_name = asking_user.first_name):
+			dic[user] = abs(round((asking_user.average_O() - user.average_O()) + (asking_user.average_C() - user.average_C()) + (asking_user.average_E() - user.average_E()) + (asking_user.average_A() - user.average_A()) + (asking_user.average_N() - user.average_N()), 2))
+	
+	elif asking_user.wish_gender == 'Homme':
+		for user in CustomUser.objects.filter(gender = 'Homme').exclude(first_name = asking_user.first_name):
+			dic[user] = abs(round((asking_user.average_O() - user.average_O()) + (asking_user.average_C() - user.average_C()) + (asking_user.average_E() - user.average_E()) + (asking_user.average_A() - user.average_A()) + (asking_user.average_N() - user.average_N()), 2))
+		
+	dic = {k: v for k, v in sorted(dic.items(), key = lambda item : item[1])}
+	first3pairs = {k: dic[k] for k in list(dic)[:3]}
+	first3 = [k for k in first3pairs.keys()]
+	match1 = first3[0]
+	match2 = first3[1]
+	match3 = first3[2]	
 	return render (request, 'accounts/profile.html', locals())
 
 def editProfile(request):

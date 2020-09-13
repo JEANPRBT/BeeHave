@@ -21,6 +21,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length = 40)
     gender = models.CharField(max_length=10, choices= GENDER_CHOICES, default = 'Homme')
     wish_gender = models.CharField(max_length=10, choices = GENDER_CHOICES, default = 'Femme')
+    avatar = models.ImageField()
     o1 = models.IntegerField(validators=[
         MaxValueValidator(5),
         MinValueValidator(1)
@@ -149,7 +150,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
-
 
     def average_O(self):
         o =(self.o1 + self.o2 + self.o3 + self.o4 + self.o5 + self.o6)/6

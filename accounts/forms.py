@@ -7,7 +7,6 @@ from .models import CustomUser
 from beehave import settings
 
 
-
 class CustomUserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm):

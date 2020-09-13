@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AVatars</title>
+</head>
+<body>
+
+	<form action = "" method = "POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" name="valider">
+	</form>
+</body>
+</html>
