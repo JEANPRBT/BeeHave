@@ -139,7 +139,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 
 EMAIL_HOST_USER = 'jeanperbet0@gmail.com'
 
-EMAIL_HOST_PASSWORD = 'Lazer512'
+EMAIL_HOST_PASSWORD = 'Lazer512$'
 
 EMAIL_PORT = 587
 
